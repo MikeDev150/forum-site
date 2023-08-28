@@ -1,0 +1,13 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-packages": "cd backend && npm install && cd ../client && npm install",
+    "start-dev": "cd backend && npm run start && cd ../client && npm run start && cd .."
+  },
+  "author": "",
+  "license": "ISC"
+}

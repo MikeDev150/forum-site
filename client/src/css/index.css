@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    color:black;
+    min-height: 100%;
+    background-color: #DAE0E6;
+}
+
+#root{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.content-wrapper{
+    width:60%;
+    margin:20px auto;
+    margin-top:0;
+    flex: 1;
+}
+
+.red-text{
+    color:red;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color:black;
+}
+
+span{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.replywrapper textarea{
+    width:500px;
+    padding:10px;
+    margin: 10px 0;
+    height:80px;
+}
+
+.pop-wrapper{
+    width: 100%;
+	height: 100vh;
+	background: #0008;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.pop-up{
+    border-radius: 8px;
+    padding:20px;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(60, 64, 67, 1) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    z-index: 10000;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.pop-up.error{
+    background-color: red;
+    color:white;
+}
+
+.pop-up-container{
+    margin:10px;
+}
+
+.top{
+    display:inline-block;
+    width: 100%;
+}
+.top h1{
+    width:fit-content;
+    float:left;
+}
+.top .close{
+    width:fit-content;
+    float:right;
+    cursor:pointer;
+    font-size: 1.2rem;
+}
+
+#tname,#tdesc,#pname,#pdesc{
+    width:500px;
+    padding:10px;
+    margin: 10px 0;
+}
+
+#tdesc,#pdesc{
+    height:60px;
+}
+
+.small{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #464646;
+    margin-bottom:5px;
+}
+
+.medium{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #464646;
+    margin-bottom:5px;
+}
+
+.top-search{
+    width:100%;
+    display: inline-block;
+}
+
+.top-search *{
+    width: fit-content;
+}
+
+.search form{
+    height:100%;
+}
+
+.search input{
+    padding:5px;
+    width:100%;
+    height:100%;
+    border:black 1px solid;
+    outline:none;
+}
+
+.search input:hover, .search input:focus-visible, .search input:active{
+    border:rgb(0,162,255) 1px solid;
+    outline:none;
+}
+
+.create{
+    padding:10px;
+    background-color: white;
+    border:rgb(0, 162, 255) 1px solid;
+    border-radius: 20px;
+    color: rgb(0, 162, 255);
+    fill: black;
+    cursor: pointer;
+}
+
+.create:hover{
+    background-color: rgb(0, 162, 255);
+    color:white;
+}
+
+.error{
+    color:red;
+}
+
+.info{
+    margin:0 10px;
+    cursor: pointer;
+}
+
+.tbtns,.pbtns{
+    float:right;
+}
+
+.tbtns .cancelbtn,.pbtns .cancelbtn{
+    margin-right:10px;
+}
+
+.three-dots{
+    float:right;
+    padding:10px;
+    padding-top:0;
+}
+
+.item{
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    cursor:default;
+    margin:10px 0;
+    border: 1px solid transparent;
+    background-color: white;
+}
+
+.item:hover{
+    border:1px solid black;
+}
+
+.title{
+    font-size:2rem;
+    margin-bottom:5px;
+}
+
+.description{
+    margin:5px 0;
+}
+
+.topicHeader .title{
+    font-size:2em;
+}
+
+.topicHeader .header{
+    height:100px;
+    background-color: rgb(0, 162, 255);
+}
+
+/*---------------ToolTip-----------------*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 180px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -90px; /* Use half of the width (180/2 = 90), to center the tooltip */
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+/*---------Options Button-----------------*/
+.options-container {
+    float:right;
+    z-index:100;
+}
+
+.options-content {
+    position: absolute;
+
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    width:max-content;
+    background-color: white;  
+    margin-top: 1.4rem;
+  
+    overflow: hidden;
+}
+
+.options-content .content,.options-content .icon, .options-content hr{
+    display: none;
+    opacity: 1;
+}
+
+.options-content.show .content, .content .icon{
+    display: inline-block;
+}
+
+.options-content.show hr{
+    display: block;
+}
+
+.postBtns{
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    overflow: hidden;
+    padding: 0 8px 0 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    align-items: center;
+}
+
+/*----------------Like Counter----------------*/
+.likeCounter{
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    overflow: hidden;
+    padding: 0 8px 0 0;
+    text-align: center;
+    align-items: center;
+}
+
+.likeCounter .btn,.postBtns .btn{
+    padding:10px;
+}
+
+.likeCounter .btn:hover,.postBtns .btn:hover{
+    background-color: rgb(219, 219, 219);
+}
+
+.btn.like:hover, .btn.like.clicked{
+    color:green;
+}
+
+.btn.dislike:hover, .btn.dislike.clicked{
+    color:red;
+}
+
+.likeCounter > .btn *{
+    pointer-events: none;
+}
+
+.content{
+    text-decoration: none;
+    color: #000;
+    width:100%;
+    background-color: white;
+    padding: 0.7rem;
+}
+
+.content:hover{
+    background-color: rgb(115, 117, 119);
+}
+
+.show{
+    display: block;
+}
+
+/* Dashed border */
+hr.dashed {
+    border-top: 100% dashed #bbb;
+}
+
+/* Dotted border */
+hr.dotted {
+    border-top: 100% dotted #bbb;
+}
+
+/* Solid border */
+hr.solid {
+    border-top: 100% solid #bbb;
+}
+
+/* Rounded border */
+hr.rounded {
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
+}
+
+.site-footer{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 6%);
+    background-color: white;
+}
+
+.footer-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin:1rem;
+}
+
+.footer-content *{
+    text-align: center;
+}
+
+.footer-content h3{
+    margin-bottom: 0;
+}
+
+.legal{
+    display: grid;
+}
+
+.legal *{
+    height:fit-content;
+}
+
+.link{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.link:hover{
+    text-decoration: underline;
+}
+
+.commentListWrapper{
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    cursor:default;
+    margin-bottom:10px;
+    border: 1px solid transparent;
+    background-color: white;
+}
+
+.commenter{
+    color:black;
+    text-decoration: underline;
+    font-weight: 500;
+    font-size:1.2em;
+}
+
+.searchCreate{
+    width:100%;
+    display:flex;
+    margin: 10px 0;
+}
+
+.searchCreate *:first-child{
+    flex:1;
+}

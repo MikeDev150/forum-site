@@ -1,0 +1,16 @@
+.error-container .close{
+    float:right;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.error-container{
+    text-align: center;
+    color:white;
+    top:10vh;
+    width:300px;
+}
+
+.error-container a{
+    text-decoration: underline;
+}
